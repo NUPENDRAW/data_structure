@@ -3,7 +3,7 @@ int main()
 {
     int s;
     int arr[5] = {5,7,2,9,12};
-    printf("Press\n1:Insertion Sort\n");
+    printf("Press\n1:Insertion Sort\n2:Bubble Sort\n");
     scanf("%d",&s);
     switch(s)
     {
@@ -22,6 +22,23 @@ int main()
         for(j = 0;j<sizeof(arr)/4;j++){
             printf("%d ",arr[j]);
         }     
+        break;
+    }
+    case 2:
+    {
+        int i,j,temp;
+        for(j = 0 ; j< sizeof(arr)/4;j++){  //
+        for(i = 0;i<(sizeof(arr)/4)-1;i++){
+            if(arr[i]>arr[i+1]){
+                temp = arr[i];
+                arr[i] = arr[i+1];
+                arr[i+1] = temp;
+            }
+        }
+    }
+    for(j = 0 ; j< sizeof(arr)/4;j++){
+        printf("%d ",arr[j]);
+    }
         break;
     }
     default:
